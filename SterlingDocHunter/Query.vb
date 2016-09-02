@@ -1,6 +1,6 @@
 ﻿Imports System.IO
 Public Class Query
-    Public SDirectory As String = "C:\EDIDATA\ArchiveIn"
+    Public SDirectory As String = ""
     Dim tbt As String = "clear"
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Button1.Text = "Searching..."
@@ -21,8 +21,10 @@ Public Class Query
             SDirectory = FolderBrowserDialog1.SelectedPath
             If SDirectory <> "" Then
                 AcceptButton = Button1
+                Button2.Text = SDirectory + Environment.NewLine + "Click to Change"
             Else
                 AcceptButton = Button2
+                Button2.Text = "Select Directory"
             End If
         End If
     End Sub
