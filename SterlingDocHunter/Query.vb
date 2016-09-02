@@ -2,6 +2,7 @@
 
 Public Class Query
     Public SDirectory As String = "C:\EDIDATA\ArchiveIn"
+    Dim tbt As String = "clear"
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Button1.Text = "Searching..."
         Button1.Enabled = False
@@ -52,4 +53,17 @@ Public Class Query
         CB = ListBox1.Text
         Clipboard.SetText(CB)
     End Sub
+
+    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
+
+    End Sub
+
+    Private Sub TextBox1_MouseClick(sender As Object, e As MouseEventArgs) Handles TextBox1.MouseClick
+        If tbt = "clear" Then
+            TextBox1.Text = ""
+            tbt = ""
+        End If
+    End Sub
+
+
 End Class

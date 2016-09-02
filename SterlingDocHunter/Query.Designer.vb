@@ -71,6 +71,7 @@ Partial Class Query
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(599, 22)
         Me.TextBox1.TabIndex = 1
+        Me.TextBox1.Text = "Enter Search String"
         '
         'Button2
         '
@@ -91,6 +92,7 @@ Partial Class Query
         'PictureBox1
         '
         Me.PictureBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
         Me.PictureBox1.Location = New System.Drawing.Point(439, 12)
         Me.PictureBox1.Name = "PictureBox1"
@@ -102,6 +104,7 @@ Partial Class Query
         'PictureBox2
         '
         Me.PictureBox2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
         Me.PictureBox2.Location = New System.Drawing.Point(530, 12)
         Me.PictureBox2.Name = "PictureBox2"
@@ -113,6 +116,7 @@ Partial Class Query
         'PictureBox3
         '
         Me.PictureBox3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
         Me.PictureBox3.Location = New System.Drawing.Point(344, 12)
         Me.PictureBox3.Name = "PictureBox3"
