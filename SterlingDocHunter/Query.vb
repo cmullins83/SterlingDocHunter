@@ -6,6 +6,7 @@ Public Class Query
     Dim tbt As String = "clear"
     Dim path2 As String = "c:\TestSidetrack\"
     Dim Editor As String = "C:\Program Files (x86)\Notepad++\notepad++.exe"
+    Dim Settings As String = "C:\Boot.ini"
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Button1.Text = "Searching..."
         Button1.Enabled = False
@@ -63,5 +64,32 @@ Public Class Query
         Dim filename As String
         filename = Path.GetFileName(CB)
         File.Move(CB, path2 + filename)
+    End Sub
+
+    Private Sub Query_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim objStreamReader As StreamReader
+        Dim strLine As String
+
+        'Pass the file path and the file name to the StreamReader constructor.
+        'objStreamReader = New StreamReader(Settings)
+
+        'Read the first line of text.
+        'strLine = objStreamReader.ReadLine
+
+        'Continue to read until you reach the end of the file.
+        'Do While Not strLine Is Nothing
+
+        'Write the line to the Console window.
+        'Console.WriteLine(strLine)
+
+        'Read the next line.
+        'strLine = objStreamReader.ReadLine
+        'Loop 'uncomment this, it's not a comment, dumbass...
+
+        'Close the file.
+        'objStreamReader.Close()
+
+        'Console.ReadLine()
+
     End Sub
 End Class
