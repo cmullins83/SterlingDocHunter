@@ -1,7 +1,11 @@
 ﻿Imports System.IO
 Public Class Query
+    'My Defines go here
+    Dim CB As String
     Public SDirectory As String = ""
     Dim tbt As String = "clear"
+    Dim path2 As String = "c:\TestSidetrack\"
+    Dim Editor As String = "C:\Program Files (x86)\Notepad++\notepad++.exe"
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Button1.Text = "Searching..."
         Button1.Enabled = False
@@ -30,7 +34,7 @@ Public Class Query
     End Sub
     Private Sub ListBox1_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles ListBox1.MouseDoubleClick
         Dim fullPath = Path.Combine(ListBox1.SelectedItem.ToString())
-        System.Diagnostics.Process.Start("C:\Program Files (x86)\Notepad++\notepad++.exe", fullPath)
+        System.Diagnostics.Process.Start(Editor, fullPath)
     End Sub
     Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
         System.Diagnostics.Process.Start("http://www.sterlingpublishing.com/catalogs.html")
@@ -42,7 +46,7 @@ Public Class Query
         System.Diagnostics.Process.Start("http://www.syncrofy.com/")
     End Sub
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        Dim CB As String
+
         Clipboard.Clear()
         CB = ListBox1.Text
         Clipboard.SetText(CB)
@@ -52,5 +56,12 @@ Public Class Query
             TextBox1.Text = ""
             tbt = ""
         End If
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        CB = ListBox1.Text
+        Dim filename As String
+        filename = Path.GetFileName(CB)
+        File.Move(CB, path2 + filename)
     End Sub
 End Class
