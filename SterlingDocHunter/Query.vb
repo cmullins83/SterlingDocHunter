@@ -29,7 +29,7 @@ Public Class Query
             Button1.Enabled = True
             Button1.Text = "Search"
         End If
-        'Placeholder for CSV
+        ' CSV
         If InputType = "CSV" Then
             Using MyReader As New Microsoft.VisualBasic.
                       FileIO.TextFieldParser(CSVFile)
@@ -41,7 +41,7 @@ Public Class Query
                         currentRow = MyReader.ReadFields()
                         Dim currentField As String
                         For Each currentField In currentRow
-                            'try to recycle the code from the textbox search
+                            'recycle the code from the textbox search
                             Dim a As System.Collections.ObjectModel.ReadOnlyCollection(Of String)
                             a = My.Computer.FileSystem.FindInFiles(SDirectory,
                             currentField, True, FileIO.SearchOption.SearchAllSubDirectories)
@@ -121,6 +121,9 @@ Public Class Query
         'this is the current iteration of the sidetrack process, Need to add support for multiple files and move out every file first
         'then move the selected files back
         'then we need a button to restore the files back to the original directory afterwards.
+
+        'I need to set up the same file searching with a NOT to get a list of files to move out for the sidetrack
+        'Then I need a button to move everything back
         CB = ListBox1.Text
         Dim filename As String
         filename = Path.GetFileName(CB)
