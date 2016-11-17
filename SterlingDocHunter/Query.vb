@@ -1,16 +1,28 @@
-﻿Imports System.IO
+﻿'for read/writes
+Imports System.IO
+'for configuration reading and writing
+Imports System.Configuration
+Imports System.Collections.Specialized
 Public Class Query
     'My Defines go here, most will be overwritten when a configuration file is implimented.
     Dim CB As String
     Public SDirectory As String = ""
     Dim tbt As String = "clear"
-    Dim path2 As String = "c:\TestSidetrack\"
-    Dim Editor As String = "C:\Program Files (x86)\Notepad++\notepad++.exe"
+    Dim path2 As String = ConfigurationSettings.AppSettings("Path2")
+    Dim Editor As String = ConfigurationSettings.AppSettings("Editor")
     Dim Settings As String = "C:\test.ini"
     Dim InputType As String = "String"
     Dim CSVFile As String = ""
     Dim Delimiter As String = ""
 
+    Public Property Editor1 As String
+        Get
+            Return Editor
+        End Get
+        Set(value As String)
+            Editor = value
+        End Set
+    End Property
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         'Empty any previous results
@@ -47,7 +59,7 @@ Public Class Query
                         Dim currentField As String
                         For Each currentField In currentRow
                             'recycle the code from the textbox search
-                            Dim a As System.Collections.ObjectModel.ReadOnlyCollection(Of String)
+                            Dim a As ObjectModel.ReadOnlyCollection(Of String)
                             a = My.Computer.FileSystem.FindInFiles(SDirectory,
                             currentField, True, FileIO.SearchOption.SearchAllSubDirectories)
                             Dim counter As Int16 = 0
@@ -96,9 +108,9 @@ Public Class Query
         Dim fullPath = Path.Combine(ListBox1.SelectedItem.ToString())
         'launch the fully qualified path to the editor and pass it the fully qualified path we set for the file
         Try
-            System.Diagnostics.Process.Start(Editor, fullPath)
+            System.Diagnostics.Process.Start(Editor1, fullPath)
         Catch ex As Exception
-            MessageBox.Show("Editor not set or file not available")
+            MessageBox.Show("Editor (" & Editor1 & ") not set or file not available.")
         End Try
 
     End Sub
@@ -139,6 +151,7 @@ Public Class Query
         Dim filename As String
         filename = Path.GetFileName(CB)
         File.Move(CB, path2 + filename)
+        ListBox1.Items.Remove(CB)
     End Sub
 
     Private Sub Query_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -188,5 +201,25 @@ Public Class Query
         OpenFileDialog1.Filter = "All Files (*.*)|*.*"
         OpenFileDialog1.ShowDialog()
         CSVFile = OpenFileDialog1.FileName
+    End Sub
+
+    Private Sub SettingsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SettingsToolStripMenuItem.Click
+
+    End Sub
+
+    Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
+        Close()
+    End Sub
+
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        'This will be where everything is moved FROM the 850 directory to a temp directory
+        'and everything will be moved from the sidetrack directory, back to inbound
+        'we will need a popup indicating that the BP should be run until we can intigrate it with 
+        'a command line option for SI.
+
+    End Sub
+
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+        'This will be where we move everything from the temporary directory back to the inbound folder
     End Sub
 End Class

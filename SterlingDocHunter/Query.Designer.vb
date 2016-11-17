@@ -41,6 +41,10 @@ Partial Class Query
         Me.ListToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CSVToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.SettingsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.Button6 = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -52,10 +56,10 @@ Partial Class Query
         Me.Button1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.Button1.Location = New System.Drawing.Point(8, 502)
+        Me.Button1.Location = New System.Drawing.Point(11, 502)
         Me.Button1.Margin = New System.Windows.Forms.Padding(2)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(375, 30)
+        Me.Button1.Size = New System.Drawing.Size(63, 30)
         Me.Button1.TabIndex = 2
         Me.Button1.Text = "Search"
         Me.Button1.UseVisualStyleBackColor = True
@@ -70,7 +74,7 @@ Partial Class Query
         Me.ListBox1.Location = New System.Drawing.Point(10, 129)
         Me.ListBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.Size = New System.Drawing.Size(668, 355)
+        Me.ListBox1.Size = New System.Drawing.Size(679, 355)
         Me.ListBox1.TabIndex = 3
         '
         'TextBox1
@@ -81,7 +85,7 @@ Partial Class Query
         Me.TextBox1.Location = New System.Drawing.Point(10, 96)
         Me.TextBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(667, 20)
+        Me.TextBox1.Size = New System.Drawing.Size(679, 20)
         Me.TextBox1.TabIndex = 1
         Me.TextBox1.Text = "Enter Search String or Select Input File"
         '
@@ -92,7 +96,7 @@ Partial Class Query
         Me.Button2.Location = New System.Drawing.Point(6, 26)
         Me.Button2.Margin = New System.Windows.Forms.Padding(2)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(461, 66)
+        Me.Button2.Size = New System.Drawing.Size(473, 66)
         Me.Button2.TabIndex = 0
         Me.Button2.Text = "Select Directory"
         Me.Button2.UseVisualStyleBackColor = True
@@ -107,7 +111,7 @@ Partial Class Query
         Me.PictureBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(543, 26)
+        Me.PictureBox1.Location = New System.Drawing.Point(555, 26)
         Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(64, 66)
@@ -120,7 +124,7 @@ Partial Class Query
         Me.PictureBox2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(612, 26)
+        Me.PictureBox2.Location = New System.Drawing.Point(624, 26)
         Me.PictureBox2.Margin = New System.Windows.Forms.Padding(2)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(62, 66)
@@ -133,7 +137,7 @@ Partial Class Query
         Me.PictureBox3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
-        Me.PictureBox3.Location = New System.Drawing.Point(472, 26)
+        Me.PictureBox3.Location = New System.Drawing.Point(484, 26)
         Me.PictureBox3.Margin = New System.Windows.Forms.Padding(2)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(67, 66)
@@ -147,26 +151,25 @@ Partial Class Query
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.Button3.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.Button3.Location = New System.Drawing.Point(387, 502)
+        Me.Button3.Location = New System.Drawing.Point(111, 502)
         Me.Button3.Margin = New System.Windows.Forms.Padding(2)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(155, 30)
+        Me.Button3.Size = New System.Drawing.Size(103, 30)
         Me.Button3.TabIndex = 4
         Me.Button3.Text = "Copy to Clipboard"
         Me.Button3.UseVisualStyleBackColor = True
         '
         'Button4
         '
-        Me.Button4.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button4.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Button4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.Button4.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.Button4.Location = New System.Drawing.Point(546, 502)
+        Me.Button4.Location = New System.Drawing.Point(251, 502)
         Me.Button4.Margin = New System.Windows.Forms.Padding(2)
         Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(132, 30)
+        Me.Button4.Size = New System.Drawing.Size(144, 30)
         Me.Button4.TabIndex = 9
-        Me.Button4.Text = "Sidetrack"
+        Me.Button4.Text = "Sidetrack Selected Item"
         Me.Button4.UseVisualStyleBackColor = True
         '
         'MenuStrip1
@@ -174,13 +177,13 @@ Partial Class Query
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(685, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(697, 24)
         Me.MenuStrip1.TabIndex = 10
         Me.MenuStrip1.Text = "MenuStrip1"
         '
         'FileToolStripMenuItem
         '
-        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SearchToolStripMenuItem})
+        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SearchToolStripMenuItem, Me.SettingsToolStripMenuItem, Me.ExitToolStripMenuItem})
         Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
         Me.FileToolStripMenuItem.Size = New System.Drawing.Size(37, 20)
         Me.FileToolStripMenuItem.Text = "File"
@@ -217,12 +220,54 @@ Partial Class Query
         Me.CSVToolStripMenuItem.Size = New System.Drawing.Size(95, 22)
         Me.CSVToolStripMenuItem.Text = "CSV"
         '
+        'SettingsToolStripMenuItem
+        '
+        Me.SettingsToolStripMenuItem.Name = "SettingsToolStripMenuItem"
+        Me.SettingsToolStripMenuItem.Size = New System.Drawing.Size(154, 22)
+        Me.SettingsToolStripMenuItem.Text = "Settings"
+        '
+        'ExitToolStripMenuItem
+        '
+        Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(154, 22)
+        Me.ExitToolStripMenuItem.Text = "Exit"
+        '
+        'Button5
+        '
+        Me.Button5.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.Button5.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.Button5.Location = New System.Drawing.Point(432, 502)
+        Me.Button5.Margin = New System.Windows.Forms.Padding(2)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(103, 30)
+        Me.Button5.TabIndex = 11
+        Me.Button5.Text = "Sidetrack Step 2"
+        Me.Button5.UseVisualStyleBackColor = True
+        '
+        'Button6
+        '
+        Me.Button6.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button6.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.Button6.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.Button6.Location = New System.Drawing.Point(572, 502)
+        Me.Button6.Margin = New System.Windows.Forms.Padding(2)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(111, 30)
+        Me.Button6.TabIndex = 12
+        Me.Button6.Text = "Complete Sidetrack"
+        Me.Button6.UseVisualStyleBackColor = True
+        '
         'Query
         '
         Me.AcceptButton = Me.Button2
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(685, 543)
+        Me.ClientSize = New System.Drawing.Size(697, 543)
+        Me.Controls.Add(Me.Button6)
+        Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.PictureBox3)
@@ -265,4 +310,8 @@ Partial Class Query
     Friend WithEvents ListToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CSVToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
+    Friend WithEvents SettingsToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ExitToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Button5 As Button
+    Friend WithEvents Button6 As Button
 End Class
