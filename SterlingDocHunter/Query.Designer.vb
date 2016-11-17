@@ -89,7 +89,7 @@ Partial Class Query
         '
         Me.Button2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button2.Location = New System.Drawing.Point(7, 26)
+        Me.Button2.Location = New System.Drawing.Point(6, 26)
         Me.Button2.Margin = New System.Windows.Forms.Padding(2)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(461, 66)
@@ -195,26 +195,26 @@ Partial Class Query
         'StringToolStripMenuItem
         '
         Me.StringToolStripMenuItem.Name = "StringToolStripMenuItem"
-        Me.StringToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.StringToolStripMenuItem.Size = New System.Drawing.Size(105, 22)
         Me.StringToolStripMenuItem.Text = "String"
         '
         'FileToolStripMenuItem1
         '
         Me.FileToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ListToolStripMenuItem, Me.CSVToolStripMenuItem})
         Me.FileToolStripMenuItem1.Name = "FileToolStripMenuItem1"
-        Me.FileToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
+        Me.FileToolStripMenuItem1.Size = New System.Drawing.Size(105, 22)
         Me.FileToolStripMenuItem1.Text = "File"
         '
         'ListToolStripMenuItem
         '
         Me.ListToolStripMenuItem.Name = "ListToolStripMenuItem"
-        Me.ListToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ListToolStripMenuItem.Size = New System.Drawing.Size(95, 22)
         Me.ListToolStripMenuItem.Text = "List"
         '
         'CSVToolStripMenuItem
         '
         Me.CSVToolStripMenuItem.Name = "CSVToolStripMenuItem"
-        Me.CSVToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.CSVToolStripMenuItem.Size = New System.Drawing.Size(95, 22)
         Me.CSVToolStripMenuItem.Text = "CSV"
         '
         'Query

@@ -11,13 +11,19 @@ Public Class Query
     Dim CSVFile As String = ""
     Dim Delimiter As String = ""
 
+
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        'Empty any previous results
+        ListBox1.Hide()
+        ListBox1.Items.Clear()
+
+        'Need to show a splash screen here so the user doesn't think the application is hung up.
+
         'Change the button so you don't think the program has hung
         Button1.Text = "Searching..."
         'Disable the button to prevent restarting the search by mistake
         Button1.Enabled = False
-        'Empty any previous results
-        ListBox1.Items.Clear()
+
         'If the input type is string then we search for the string, looping through all files
         If InputType = "String" Then
             Dim a As System.Collections.ObjectModel.ReadOnlyCollection(Of String)
@@ -31,10 +37,9 @@ Public Class Query
         End If
         ' CSV
         If InputType = "CSV" Then
-            Using MyReader As New Microsoft.VisualBasic.
-                      FileIO.TextFieldParser(CSVFile)
+            Using MyReader As New FileIO.TextFieldParser(CSVFile)
                 MyReader.TextFieldType = FileIO.FieldType.Delimited
-                MyReader.SetDelimiters(delimiter)
+                MyReader.SetDelimiters(Delimiter)
                 Dim currentRow As String()
                 While Not MyReader.EndOfData
                     Try
@@ -65,8 +70,9 @@ Public Class Query
                 End While
             End Using
         End If
-        'Newline
 
+        ' LoadScreen1.Hide()
+        ListBox1.Show()
 
     End Sub
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
@@ -89,7 +95,12 @@ Public Class Query
         'set the variable fullpath to be the fully qualified path of the double clicked file
         Dim fullPath = Path.Combine(ListBox1.SelectedItem.ToString())
         'launch the fully qualified path to the editor and pass it the fully qualified path we set for the file
-        System.Diagnostics.Process.Start(Editor, fullPath)
+        Try
+            System.Diagnostics.Process.Start(Editor, fullPath)
+        Catch ex As Exception
+            MessageBox.Show("Editor not set or file not available")
+        End Try
+
     End Sub
     Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
         'open the default browser to the URL:
